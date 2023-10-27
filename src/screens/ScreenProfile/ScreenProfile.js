@@ -16,7 +16,6 @@ const ScreenProfile = () => {
     const loadTasks = async () => {
         try {
             const savedTasks = await AsyncStorage.getItem('tasks');
-            console.log("ITEMMEAODHIOWAJOÇD \n")
             if (savedTasks) {
                 dispatch({ type: 'LOAD_INITIAL_TASKS', payload: JSON.parse(savedTasks) });
             }

@@ -1,18 +1,12 @@
-import React from 'react';
-import { View } from 'react-native';
-import styles from './styles';
-import BackButton from '../../components/BackButton/BackButton';
-import AddTodo from '../../components/AddTodo/AddTodo';
+import { StyleSheet } from 'react-native';
 
-const TodoList = () => {
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'rgb(11, 11, 22)',
+    paddingHorizontal: 20,
+    paddingTop: 35
+  },
+});
 
-
-  return (
-    <View style={styles.container}>
-      <BackButton title={'Voltar'} />
-      <AddTodo />
-    </View>
-  );
-};
-
-export default TodoList;
+export default styles;

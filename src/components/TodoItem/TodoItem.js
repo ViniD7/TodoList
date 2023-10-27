@@ -4,7 +4,7 @@ import styles from './styles';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useTodo } from '../../hooks/useTodo';
-import { useNavigation, useIsFocused } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
 const truncateText = (text, maxLength) => {
     if (text.length > maxLength) {
@@ -17,7 +17,6 @@ const TodoItem = ({ task, onDelete, onComplete, onEdit }) => {
     const { dispatch } = useTodo();
     const [isEditing, setIsEditing] = useState(false);
     const [editedTitle, setEditedTitle] = useState(task.title);
-    const [isEditingDescription, setIsEditingDescription] = useState(false); // Adicione essa linha
     const [editedDescription, setEditedDescription] = useState(task.description);
     const navigation = useNavigation();
 
@@ -44,21 +43,6 @@ const TodoItem = ({ task, onDelete, onComplete, onEdit }) => {
 
     const handleDelete = () => {
         onDelete(task.id);
-    };
-
-    const handleEditDescription = () => {
-        if (isEditingDescription) {
-            dispatch({
-                type: 'EDIT_TASK',
-                payload: {
-                    id: task.id,
-                    title: editedTitle,
-                    description: editedDescription,
-                },
-            });
-            onEdit(task.id, editedTitle, editedDescription);
-        }
-        setIsEditingDescription(!isEditingDescription);
     };
 
     return (
@@ -105,49 +89,6 @@ const TodoItem = ({ task, onDelete, onComplete, onEdit }) => {
                     <AntDesign name="delete" size={20} color="white" />
                 </TouchableOpacity>
             </View>
-            {isEditingDescription ? (
-                <TextInput
-                    style={styles.editTaskText}
-                    value={editedDescription}
-                    onChangeText={(text) => setEditedDescription(text)}
-                />
-            ) : (
-                <Text
-                    onPress={() => navigation.navigate('ScreenDescription', {
-                        titleTodo: task.title,
-                        descriptionTodo: task.description
-                    })}
-                    style={styles.taskText}
-                >
-                    {isEditingDescription ? (
-                        <TextInput
-                            style={styles.editTaskText}
-                            value={editedDescription}
-                            onChangeText={(text) => setEditedDescription(text)}
-                        />
-                    ) : (
-                        <Text
-                            onPress={() => navigation.navigate('ScreenDescription', {
-                                titleTodo: task.title,
-                                descriptionTodo: task.description
-                            })}
-                            style={styles.taskText}
-                        >
-                            {task.description && truncateText(task.description, 50)}
-                        </Text>
-                    )}
-                </Text>
-            )}
-            <TouchableOpacity
-                onPress={handleEditDescription}
-                style={{ ...styles.options, backgroundColor: 'rgb(70, 21, 175)' }}
-            >
-                {isEditingDescription ? (
-                    <AntDesign name="check" size={20} color="rgb(0, 255, 132)" />
-                ) : (
-                    <AntDesign name="edit" size={23} color="white" />
-                )}
-            </TouchableOpacity>
         </View>
     );
 };
