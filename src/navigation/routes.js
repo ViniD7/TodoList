@@ -1,8 +1,8 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
 import ScreenProfile from '../screens/ScreenProfile/ScreenProfile';
-import TodoList from '../screens/Home/TodoList';
 import ScreenDescription from '../screens/ScreenDescription/ScreenDescription';
+import AddTask from '../screens/ScreenAddTask/AddTask';
 
 
 
@@ -14,7 +14,7 @@ const PublicStacks = () => {
             screenOptions={{ headerShown: false }}
             initialRouteName="ScreenProfile">
             <Stack.Screen name="ScreenProfile" component={ScreenProfile} />
-            <Stack.Screen name="TodoList" component={TodoList} />
+            <Stack.Screen name="AddTask" component={AddTask} />
             <Stack.Screen name="ScreenDescription" component={ScreenDescription} />
         </Stack.Navigator>
     );

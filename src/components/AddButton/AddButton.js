@@ -8,7 +8,7 @@ const AddButton = () => {
     const navigation = useNavigation();
     return (
         <View style={styles.organizeAdd}>
-            <TouchableOpacity onPress={() => navigation.navigate('TodoList')} style={styles.addTask}>
+            <TouchableOpacity onPress={() => navigation.navigate('AddTask')} style={styles.addTask}>
                 <Text style={styles.add}>ADICIONAR</Text>
                 <MaterialIcons name='add' color='rgb(23, 94, 157)' size={20} />
             </TouchableOpacity>

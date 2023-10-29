@@ -24,7 +24,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginBottom: 15,
     },
-    options: {
+    optionEdit: {
+        marginLeft: 10,
+        backgroundColor: 'rgb(70, 21, 175)',
+        height: 48,
+        width: 50,
+        borderRadius: 8,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    optionDelete: {
         marginLeft: 10,
         backgroundColor: 'red',
         height: 48,

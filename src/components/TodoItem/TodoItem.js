@@ -35,8 +35,6 @@ const TodoItem = ({ task, onDelete, onComplete, onEdit }) => {
         }
         setIsEditing(!isEditing);
     };
-
-
     const handleComplete = () => {
         onComplete(task.id)
     };
@@ -77,7 +75,7 @@ const TodoItem = ({ task, onDelete, onComplete, onEdit }) => {
             <View style={styles.organizeOptions}>
                 <TouchableOpacity
                     onPress={handleEdit}
-                    style={{ ...styles.options, backgroundColor: 'rgb(70, 21, 175)' }}
+                    style={styles.optionEdit}
                 >
                     {isEditing ? (
                         <AntDesign name="check" size={20} color="rgb(0, 255, 132)" />
@@ -85,7 +83,7 @@ const TodoItem = ({ task, onDelete, onComplete, onEdit }) => {
                         <AntDesign name="edit" size={23} color="white" />
                     )}
                 </TouchableOpacity>
-                <TouchableOpacity onPress={handleDelete} style={{ ...styles.options, backgroundColor: 'red' }}>
+                <TouchableOpacity onPress={handleDelete} style={styles.optionDelete}>
                     <AntDesign name="delete" size={20} color="white" />
                 </TouchableOpacity>
             </View>

@@ -4,7 +4,7 @@ import styles from './styles';
 import BackButton from '../../components/BackButton/BackButton';
 import AddTodo from '../../components/AddTodo/AddTodo';
 
-const TodoList = () => {
+const AddTask = () => {
 
 
   return (
@@ -15,4 +15,4 @@ const TodoList = () => {
   );
 };
 
-export default TodoList;
+export default AddTask;
