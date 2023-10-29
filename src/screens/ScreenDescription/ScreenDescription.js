@@ -16,7 +16,6 @@ const ScreenDescription = ({ route }) => {
                     <View style={styles.descriptionContainer}>
                         <Text style={styles.description}>{descriptionTodo}</Text>
                     </View>
-
                 </View>
             </ScrollView>
         </View>
@@ -24,7 +23,6 @@ const ScreenDescription = ({ route }) => {
 };
 
 export default ScreenDescription;
-
 
 
 
