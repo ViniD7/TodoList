@@ -2,7 +2,7 @@ import React from 'react';
 import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { TodoProvider } from './src/hooks/useTodo';
-import PublicStacks from './src/navigation/routes';
+import Stacks from './src/navigation/routes';
 
 
 const App = () => {
@@ -10,7 +10,7 @@ const App = () => {
     <NavigationContainer>
       <StatusBar backgroundColor="transparent" translucent={true} />
       <TodoProvider>
-        <PublicStacks />
+        <Stacks />
       </TodoProvider>
     </NavigationContainer>
   );

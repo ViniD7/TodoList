@@ -8,7 +8,7 @@ import AddTask from '../screens/ScreenAddTask/AddTask';
 
 const Stack = createNativeStackNavigator();
 
-const PublicStacks = () => {
+const Stacks = () => {
     return (
         <Stack.Navigator
             screenOptions={{ headerShown: false }}
@@ -20,4 +20,4 @@ const PublicStacks = () => {
     );
 };
 
-export default PublicStacks;
+export default Stacks;
