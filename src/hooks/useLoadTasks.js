@@ -24,7 +24,7 @@ const useLoadTasks = () => {
         loadTasks();
     }, []);
 
-    return { loading, tasks };
+    return tasks;
 };
 
 export default useLoadTasks;

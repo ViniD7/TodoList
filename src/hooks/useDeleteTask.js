@@ -12,7 +12,7 @@ const useDeleteTask = () => {
         await AsyncStorage.setItem('tasks', JSON.stringify(updatedTasks));
     };
 
-    return { deleteTask };
+    return deleteTask;
 };
 
 export default useDeleteTask;

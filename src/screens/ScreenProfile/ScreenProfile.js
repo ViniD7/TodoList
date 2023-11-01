@@ -11,11 +11,10 @@ import useEditTask from '../../hooks/useEditTask';
 import useLoadTasks from '../../hooks/useLoadTasks';
 
 const ScreenProfile = () => {
-    const { editTask } = useEditTask()
-    const { completeTask } = useCompleteTask()
-    const { deleteTask } = useDeleteTask()
-    const { tasks } = useLoadTasks()
-
+    const editTask = useEditTask()
+    const completeTask = useCompleteTask()
+    const deleteTask = useDeleteTask()
+    const tasks = useLoadTasks()
 
     return (
         <View style={styles.container}>

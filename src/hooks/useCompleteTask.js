@@ -17,7 +17,7 @@ const useCompleteTask = () => {
         await AsyncStorage.setItem('tasks', JSON.stringify(updatedTasks));
     };
 
-    return { completeTask };
+    return completeTask;
 };
 
 export default useCompleteTask;

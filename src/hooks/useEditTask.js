@@ -17,7 +17,7 @@ const useEditTask = () => {
         await AsyncStorage.setItem('tasks', JSON.stringify(updatedTasks));
     };
 
-    return { editTask };
+    return editTask;
 };
 
 export default useEditTask;
